@@ -1,0 +1,16 @@
+app = "telegram-video-downloader-bot"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  MAX_FILE_MB = "49"
+  DOWNLOAD_FORMAT = "bv*+ba/bestvideo+bestaudio/best"
+  MERGE_OUTPUT_FORMAT = "mp4"
+  CLEANUP_DOWNLOADS = "true"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512
