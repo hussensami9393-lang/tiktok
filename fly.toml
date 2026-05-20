@@ -1,29 +1,16 @@
-# fly.toml app configuration file generated for tiktok-g0mmgw on 2026-05-20T21:26:04Z
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
-app = 'tiktok-g0mmgw'
-primary_region = 'ams'
+app = "telegram-video-downloader-bot"
+primary_region = "ams"
 
 [build]
-  dockerfile = 'Dockerfile'
+  dockerfile = "Dockerfile"
 
 [env]
-  CLEANUP_DOWNLOADS = 'true'
-  DOWNLOAD_FORMAT = 'bv*+ba/bestvideo+bestaudio/best'
-  MAX_FILE_MB = '49'
-  MERGE_OUTPUT_FORMAT = 'mp4'
-
-[http_service]
-  internal_port = 8080
-  force_https = true
-  auto_stop_machines = 'stop'
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ['app']
+  MAX_FILE_MB = "49"
+  DOWNLOAD_FORMAT = "bv*+ba/bestvideo+bestaudio/best"
+  MERGE_OUTPUT_FORMAT = "mp4"
+  CLEANUP_DOWNLOADS = "true"
 
 [[vm]]
-  cpu_kind = 'shared'
+  cpu_kind = "shared"
   cpus = 1
   memory_mb = 512
